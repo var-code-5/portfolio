@@ -3,6 +3,7 @@ import { Space_Grotesk, Rethink_Sans } from "next/font/google";
 import "./globals.css";
 import ClickSpark from "@/components/ui/ClickSpark";
 import Navbar from "@/components/Navbar";
+import { ReactLenis } from 'lenis/react';
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -29,16 +30,24 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${rethinkSans.variable} antialiased flex flex-col items-center w-screen min-h-screen font-rethink-sans text-black-text`}
       >
-        <ClickSpark
-          sparkColor='#00000'
-          sparkSize={10}
-          sparkRadius={15}
-          sparkCount={8}
-          duration={400}
+        <ReactLenis
+          root
+          options={{
+            lerp: 0.1,
+            duration: 1.4,
+          }}
         >
-          <Navbar/>
-          {children}
-        </ClickSpark>
+          <ClickSpark
+            sparkColor='#00000'
+            sparkSize={10}
+            sparkRadius={15}
+            sparkCount={8}
+            duration={400}
+          >
+            <Navbar />
+            {children}
+          </ClickSpark>
+        </ReactLenis>
       </body>
     </html>
   );

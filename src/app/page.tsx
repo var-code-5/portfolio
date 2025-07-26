@@ -1,14 +1,30 @@
 import Email from "@/components/Email";
+import Impact from "@/components/Impact";
 import Preloader from "@/components/Preloader";
+import ProjectList from "@/components/ProjectList";
+import Skills from "@/components/Skills";
 import DarkVeil from "@/components/ui/DarkVeil";
+import ScrollDownInd from "@/components/ui/ScrollDownInd";
+import Link from "next/link";
 
 export default function Home() {
-  
+
   return (
     <>
-      <Preloader />
+      {/* <Preloader /> */}
+
+      {/* Hero section */}
       <div className=" w-full h-screen overflow-hidden relative">
         <DarkVeil speed={1} />
+
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[150%] text-[20vw] lg:text-[200px] font-space-grotesk font-bold text-center text-cpurple leading-none">
+          <p className="absolute -bottom-[15%] -left-[20%] text-black-text font-normal font-rethink-sans text-4xl">I am the</p>
+          <span className="inline-block translate-y-full">V</span>
+          <span className="inline-block translate-y-full">A</span>
+          <span className="inline-block translate-y-full">R</span>
+          <p className="absolute -right-[43%] -bottom-[89%] text-black-text font-space-grotesk text-[6vw] lg:text-6xl font-bold">IABLE</p>
+        </div>
+        <p className="absolute top-1/2 left-1/2 -translate-x-[50%] translate-y-[400%] font-rethink-sans text-4xl">You are looking for !!</p>
 
         {/* email */}
         <Email />
@@ -21,10 +37,12 @@ export default function Home() {
           <p className="font-rethink-sans text-black-text">10+</p>
         </div>
 
+        <ScrollDownInd className="absolute bottom-20 left-1/2 transform -translate-x-1/2" />
       </div>
-      <div className="min-h-screen">
-        <h1>this is a second one </h1>
-      </div>
+
+      <Impact />
+      <Skills />
+      <ProjectList />
     </>
   );
 }

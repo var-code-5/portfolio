@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --cgreen : #B7F43E;
+  --cpurple: #9929EA;
   --black-text: #171717;
 }
 
@@ -11,6 +12,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-cgreen: var(--cgreen);
+  --color-cpurple: var(--cpurple);
   --color-black-text: var(--black-text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

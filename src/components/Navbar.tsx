@@ -30,7 +30,7 @@ export default function Navbar() {
                         {/* Logo */}
                         <div className="flex ml-4 md:ml-0 items-center">
                             <h1 className="text-2xl font-bold text-black">
-                                Logo
+                                Varshith
                             </h1>
                         </div>
 
