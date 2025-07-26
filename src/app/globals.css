@@ -3,21 +3,27 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --cgreen : #B7F43E;
+  --black-text: #171717;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-cgreen: var(--cgreen);
+  --color-black-text: var(--black-text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-space-grotesk: var(--font-space-grotesk);
+  --font-rethink-sans: var(--font-rethink-sans);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);

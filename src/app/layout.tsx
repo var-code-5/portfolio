@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, Rethink_Sans } from "next/font/google";
 import "./globals.css";
+import ClickSpark from "@/components/ui/ClickSpark";
+import Navbar from "@/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const rethinkSans = Rethink_Sans({
+  variable: "--font-rethink-sans",
   subsets: ["latin"],
 });
 
@@ -25,9 +27,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${rethinkSans.variable} antialiased flex flex-col items-center w-screen min-h-screen font-rethink-sans text-black-text`}
       >
-        {children}
+        <ClickSpark
+          sparkColor='#00000'
+          sparkSize={10}
+          sparkRadius={15}
+          sparkCount={8}
+          duration={400}
+        >
+          <Navbar/>
+          {children}
+        </ClickSpark>
       </body>
     </html>
   );
