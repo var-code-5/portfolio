@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import Email from "@/components/Email";
 import Impact from "@/components/Impact";
 import Preloader from "@/components/Preloader";
@@ -11,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      {/* <Preloader /> */}
+      <Preloader />
 
       {/* Hero section */}
       <div className=" w-full h-screen overflow-hidden relative">
@@ -44,6 +45,7 @@ export default function Home() {
       <Impact />
       <Skills />
       <ProjectList />
+      <About />
 
     </>
   );

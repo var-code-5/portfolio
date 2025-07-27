@@ -84,19 +84,19 @@ const ProjectDetails = ({ project }: Props) => {
     );
 
     return (
-        <section className="pt-5 pb-14">
+        <section className="pt-5 pb-14 px-6 mx-auto">
             <div className="container" ref={containerRef}>
                 <TransitionLink
                     back
                     href="/"
-                    className="mb-16 inline-flex gap-2 items-center group h-12"
+                    className="hidden mb-16 md:inline-flex gap-2 items-center group h-12"
                 >
                     <ArrowLeft className="group-hover:-translate-x-1 group-hover:text-primary transition-all duration-300" />
                     Back
                 </TransitionLink>
 
                 <div
-                    className="top-0 min-h-[calc(100svh-100px)] flex"
+                    className="mt-28 md:mt-0 top-0 min-h-[calc(100svh-100px)] flex"
                     id="info"
                 >
                     <div className="relative w-full">
