@@ -6,7 +6,7 @@ export default function Impact() {
     const stats = [
         { label: 'Users Reached', value: 65000 },
         { label: 'Active Users', value: 800 },
-        { label: 'Projects Created', value: 32 },
+        { label: 'Projects', value: 32 },
         { label: 'Clients Satisfied', value: 7 }
     ];
 
