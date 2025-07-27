@@ -36,7 +36,7 @@ export default function Email() {
     return (
         <>
             <div
-                className="absolute top-3/4 -left-20 rotate-90 font-space-grotesk text-lg cursor-pointer select-none"
+                className="absolute top-3/4 -left-20 rotate-90 font-space-grotesk text-lg cursor-pointer select-none hidden md:block"
                 onClick={copyToClipboard}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}

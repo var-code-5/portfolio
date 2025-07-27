@@ -18,7 +18,7 @@ export default function Navbar() {
     ]
 
     return (
-        <nav className="fixed top-0 left-0 right-0 md:left-[20%] md:right-[20%] p-4">
+        <nav className="fixed top-0 left-0 right-0 md:left-[20%] md:right-[20%] p-4 z-10">
             <GlassSurface
                 width="100%"
                 height="auto"

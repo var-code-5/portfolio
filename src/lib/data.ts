@@ -2,113 +2,121 @@ import { IProject } from "@/types";
 
 export const PROJECTS: IProject[] = [
     {
-        title: 'MTI Electronics',
-        slug: 'mti-electronics',
-        liveUrl: 'https://mti-electronics.vercel.app/',
+        title: 'Bureaucritic',
+        slug: 'bureaucritic',
+        liveUrl: 'https://bureaucritic.varshith.tech/', // Add your live URL here
+        sourceCode: 'https://github.com/var-code-5/bureaucritic',
         year: 2025,
         description: `
-      A complete agency portfolio platform built for MTI Electronics to showcase their services, blog content, and product offerings. <br/> <br/>
+      Bureaucritic is a comprehensive administrative management system designed to streamline bureaucratic processes and event management. The platform provides an intuitive interface for managing organizational events, participant registration, and administrative workflows.<br/><br/>
       
       Key Features:<br/>
       <ul>
-        <li>🛠️ Service Display System: Interactive service showcase with synchronized sliders</li>
-        <li>✍️ Blog Management: SEO-friendly blog with categorization and search</li>
-        <li>🛒 Product Catalog: Organized product display with filtering capabilities</li>
-        <li>📱 Fully Responsive: Optimized for all device sizes</li>
-        <li>⚡ Fast Performance: Optimized Next.js frontend with ISR (Incremental Static Regeneration)</li>
+        <li>📋 Event Management: Complete event lifecycle management with registration and participant tracking</li>
+        <li>👥 Participant Management: Efficient handling of participant data and registration details</li>
+        <li>📊 Administrative Dashboard: Centralized control panel for managing all system operations</li>
+        <li>📱 Responsive Design: Fully optimized for desktop, tablet, and mobile devices</li>
+        <li>⚡ Performance Optimized: Built with Next.js App Router for optimal loading speeds</li>
+        <li>🔍 Search & Filter: Advanced filtering capabilities for participant and event data</li>
+        <li>📄 Report Generation: Automated generation of event reports and participant summaries</li>
       </ul><br/>
       
       Technical Highlights:
       <ul>
-        <li>Implemented complex slider synchronization logic using Swiper.js</li>
-        <li>Customized Payload CMS admin panel for intuitive content management</li>
-        <li>Developed reusable UI components with shadcn for design consistency</li>
-        <li>Configured efficient data fetching strategies in Next.js</li>
+        <li>Implemented modern Next.js 13+ App Router architecture</li>
+        <li>Developed reusable components with TypeScript for type safety</li>
+        <li>Integrated server-side rendering for improved SEO and performance</li>
+        <li>Built responsive UI components with modern CSS frameworks</li>
+        <li>Configured efficient data management and state handling</li>
       </ul>
       `,
         role: `
-      Full-Stack Developer <br/>
-      Owned the entire development lifecycle:
+      Full-Stack Developer<br/>
+      Led the complete development process:
       <ul>
-        <li>✅ Backend: Configured Payload CMS with custom collections for services, blogs, and products</li>
-        <li>🎨 Frontend: Built all UI components using Tailwind CSS and shadcn</li>
-        <li>🔄 State Management: Implemented client-side data fetching and caching</li>
-        <li>🖥️ CMS Customization: Created admin interfaces for content editors</li>
-        <li>🚀 Deployment: Set up CI/CD pipeline for Vercel hosting</li>
-        <li>🧩 Third-Party Integration: Added Swiper.js for interactive sliders</li>
+        <li>🏗️ Architecture: Designed scalable application structure using Next.js App Router</li>
+        <li>🎨 Frontend: Developed responsive UI components with modern design principles</li>
+        <li>⚙️ Backend: Implemented server-side logic for data management and API routes</li>
+        <li>🔧 Configuration: Set up development environment and build processes</li>
+        <li>🚀 Deployment: Configured deployment pipeline and hosting setup</li>
       </ul>
       `,
         techStack: [
             'Next.js',
-            'Payload CMS',
+            'TypeScript',
+            'React',
             'Tailwind CSS',
-            'shadcn',
-            'Swiper.js',
-            'React Hook Form',
-            'Vercel',
+            'Node.js',
+            'Express',
+            'PostgreSQL',
+            'Groq'
         ],
-        thumbnail: '/projects/thumbnail/mti-electronics.webp',
-        longThumbnail: '/projects/long/mti-electronics.webp',
+        thumbnail: '/projects/bureaucritic/1.png',
+        longThumbnail: '/projects/bureaucritic/1.png', 
         images: [
-            '/projects/images/mti-electronics-1.webp',
-            '/projects/images/mti-electronics-2.webp',
+            '/projects/bureaucritic/1.png',
+            '/projects/bureaucritic/2.png',
+            '/projects/bureaucritic/3.png',
         ],
     },
     {
-        title: 'Epikcart',
-        slug: 'epikcart',
+        title: 'Riviera',
+        slug: 'riviera',
         techStack: [
             'React',
             'Redux',
-            'React i18n',
+            'Next.js',
             'Tailwind CSS',
             'Framer Motion',
             'debouncing',
             'Api Integration',
         ],
-        thumbnail: '/projects/thumbnail/epikcart.jpg',
-        longThumbnail: '/projects/long/epikcart.jpg',
+        thumbnail: '/projects/riviera/1.png',
+        longThumbnail: '/projects/riviera/1.png',
         images: [
-            '/projects/images/epikcart-1.png',
-            '/projects/images/epikcart-2.png',
-            '/projects/images/epikcart-3.png',
-            '/projects/images/epikcart-4.png',
-            '/projects/images/epikcart-5.png',
+            '/projects/riviera/1.png',
+            '/projects/riviera/3.png',
+            '/projects/riviera/4.png',
+            '/projects/riviera/5.png',
+            '/projects/riviera/6.png',
         ],
-        liveUrl: 'https://demo.epikcart.siphertech.com/',
-        year: 2023,
-        description: `Epikcart is a feature-rich, scalable e-commerce platform tailored for large businesses. It features dynamic product filtering, multi-language support with RTL, advanced inventory management, order tracking, and refund systems, offering a comprehensive solution for multi-vendor operations.`,
-        role: `As the frontend developer in a team of five, I: <br/>
-        - Built the frontend from scratch using React, Redux, RTK Query, and Tailwind CSS.<br/>
-        - Developed dynamic filtering logic for the product search page with admin-configurable parameters.<br/>
-        - Integrated multi-language support with React i18n, including RTL handling.<br/>
-        - Delivered a responsive, user-friendly interface in collaboration with the UI/UX designer.`,
+        liveUrl: 'https://riviera.varshith.tech/',
+        year: 2025,
+        description: `Riviera 2025, VIT Vellore's premier Annual International Sports and Cultural Festival. With thousands of participants from colleges worldwide for three days of exhilarating events, competitions, and performances.`,
+        role: `As the frontend developer in a team of two people, I: <br/>
+        - Developed the frontend using React, Redux, Next.js, and Tailwind CSS.<br/>
+        - Implemented debouncing techniques for efficient API calls. Decreasing the load on the server and improving response times by 30%.<br/>
+        - Integrated APIs for dynamic data handling.<br/>
+        - Ensured responsive design for optimal user experience across devices.`,
     },
     {
-        title: 'Resume Roaster',
-        slug: 'resume-roaster',
+        title: 'Enrollment Site',
+        slug: 'enrollment-site',
         techStack: [
-            'GPT-4',
             'Next.js',
+            'Django',
             'Postgressql',
-            'Prisma',
             'Tailwind CSS',
         ],
-        thumbnail: '/projects/thumbnail/resume-roaster.jpg',
-        longThumbnail: '/projects/long/resume-roaster.jpg',
+        thumbnail: '/projects/recruitments/1.png',
+        longThumbnail: '/projects/recruitments/1.jpg',
         images: [
-            '/projects/images/resume-roaster-1.png',
-            '/projects/images/resume-roaster-2.png',
-            '/projects/images/resume-roaster-3.png',
+            '/projects/recruitments/1.png',
+            '/projects/recruitments/2.png',
+            '/projects/recruitments/3.png',
+            '/projects/recruitments/4.png',
+            '/projects/recruitments/5.png',
+            '/projects/recruitments/6.png',
         ],
-        liveUrl: 'https://resume-roaster.vercel.app/',
-        year: 2023,
+        liveUrl: 'https://recruitments.varshith.tech/',
+        year: 2025,
         description:
-            'Resume Roaster is a web application designed to provide tailored resume feedback and professional writing services. Built with Next.js, PostgreSQL, Prisma, and Tailwind CSS, it integrates GPT-4 for AI-powered recommendations. The platform also includes peer-to-peer reviews with a points-based system, fostering a collaborative and engaging experience. Targeting freshers, experienced professionals, and programmers, it helps optimize resumes for job-specific success.',
-        role: `As the sole developer and business owner, I:<br/>
-        - Designed and developed the platform end-to-end using Next.js, PostgreSQL, Prisma, and Tailwind CSS.<br/>
-        - Integrated GPT-4 for AI-driven feedback and insights.<br/>
-        - Implemented complex SQL queries, including one to identify the top two resumes based on user points.`,
+            'A recruitment platform designed to streamline the hiring process for companies and candidates(Current instance is of the GDSC club). The platform allows companies to post job openings, manage applications, and communicate with candidates efficiently.',
+        role: `As a full-stack developer I:<br/>
+        - developed the platform end-to-end using Next.js, PostgreSQL and Tailwind CSS.<br/>
+        - Implemented Anti-cheat mechanisms to ensure fair evaluations.<br/>
+        - Integrated Django for backend services, ensuring secure and efficient data handling.<br/>
+        - Ensured smooth user experience with lower latency for 5k+ concurrent users.<br/>`,
     },
     {
         title: 'Real Estate',

@@ -93,7 +93,7 @@ export default function Skills() {
 
                         <div className="col-span-1 sm:col-span-2 mt-6">
                             <p className="font-rethink-sans text-base sm:text-lg gsap-reveal">The list goes on... as the <span className="text-cpurple">possibilities are endless</span>.</p>
-                            <p className="font-rethink-sans text-base sm:text-lg gsap-reveal">To see the full list of my skills, feel free to <Link href="/contact">reach out!</Link></p>
+                            <p className="font-rethink-sans text-base sm:text-lg gsap-reveal">To see the full list of my skills, feel free to <Link href="/contact" className='font-bold underline'>reach out!</Link></p>
                         </div>
                     </div>
                 </div>

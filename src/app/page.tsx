@@ -23,7 +23,7 @@ export default function Home() {
           <span className="inline-block translate-y-full">A</span>
           <span className="inline-block translate-y-full">R</span>
           <p className="absolute -right-[43%] -bottom-[89%] text-black-text font-space-grotesk text-[6vw] lg:text-6xl font-bold">IABLE</p>
-          <p className="absolute top-1/2 left-1/2 -translate-x-[50%] translate-y-[400%] font-rethink-sans text-4xl">You are looking for !!</p>
+          <p className="absolute right-[5%] -bottom-[120%] font-rethink-sans text-[4vw] lg:text-4xl text-black-text font-normal text-nowrap">You are looking for !!</p>
         </div>
 
         {/* email */}

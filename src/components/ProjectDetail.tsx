@@ -1,6 +1,5 @@
 'use client';
 import parse from 'html-react-parser';
-import ArrowAnimation from '@components/ArrowAnimation';
 import TransitionLink from '@/components/TransitionLink';
 import { IProject } from '@/types';
 import { useGSAP } from '@gsap/react';
@@ -170,8 +169,6 @@ const ProjectDetails = ({ project }: Props) => {
                                 </div>
                             )}
                         </div>
-
-                        <ArrowAnimation />
                     </div>
                 </div>
 
@@ -185,7 +182,7 @@ const ProjectDetails = ({ project }: Props) => {
                             className="group relative w-full aspect-[750/400] bg-background-light"
                             style={{
                                 backgroundImage: `url(${image})`,
-                                backgroundSize: 'cover',
+                                backgroundSize: 'contain',
                                 backgroundPosition: 'center 50%',
                                 backgroundRepeat: 'no-repeat',
                             }}

@@ -11,21 +11,23 @@ export default function Impact() {
     ];
 
     return (
-        <div className='w-full mx-auto max-w-screen-xl px-4'>
-            <h1 className='text-6xl '>The <span className='text-cgreen font-bold font-space-grotesk'>VAR</span>-Effect</h1>
+        <div className='w-full mx-auto max-w-screen-xl px-4 py-12'>
+            <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center md:text-left'>
+                The <span className='text-cgreen font-bold font-space-grotesk'>VAR</span>-Effect
+            </h1>
 
-            <div className='mt-8 grid grid-cols-2 md:grid-cols-4 gap-4'>
+            <div className='mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full mx-auto'>
                 {stats.map((stat) => (
-                    <GlassSurface key={stat.label} className='flex flex-col items-center justify-center p-6 text-center'>
+                    <GlassSurface key={stat.label} className='flex flex-col items-center justify-center p-4 md:p-6 text-center w-full'>
                         <CountUp
                             to={stat.value}
                             from={0}
                             duration={2.5}
                             separator=","
-                            className="text-4xl font-bold w-full"
+                            className="text-3xl md:text-4xl font-bold w-full"
                             ease="power3.out"
                         />
-                        <p className='mt-2 text-lg'>{stat.label}</p>
+                        <p className='mt-1 md:mt-2 text-base md:text-lg'>{stat.label}</p>
                     </GlassSurface>
                 ))}
             </div>
