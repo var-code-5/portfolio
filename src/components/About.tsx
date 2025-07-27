@@ -9,8 +9,6 @@ export default function About() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         
-        const container = containerRef.current;
-        
         // Animate the title
         gsap.fromTo(
             '.about-title',
@@ -45,7 +43,7 @@ export default function About() {
         );
         
         // Animate each section
-        gsap.utils.toArray('.about-section').forEach((section, i) => {
+        gsap.utils.toArray('.about-section').forEach((section) => {
             gsap.fromTo(
                 section as Element,
                 { opacity: 0, y: 30 },
@@ -69,7 +67,7 @@ export default function About() {
     
     return (
         <div ref={containerRef} className='min-h-screen w-full mx-auto max-w-screen-xl px-4 py-16' id='about'>
-            <h1 className='about-title text-4xl font-bold mb-8 font-space-grotesk border-b-2 text-cpurple border-cgreen capitalize'>Let's talk about Me..</h1>
+            <h1 className='about-title text-4xl font-bold mb-8 font-space-grotesk border-b-2 text-cpurple border-cgreen capitalize'>Let&apos;s talk about Me..</h1>
             <p className='about-intro text-lg mb-8 font-rethink-sans'>
                 Hey there! mi llamo Varshit, I am a 20-year-old software engineer from India (that sound generic right). I love reading, eating, sleeping and coding. lets get to know me
             </p>
@@ -96,7 +94,7 @@ export default function About() {
                         <li className='mb-2'>English</li>
                         <li className='mb-2'>Hindi</li>
                         <li className='mb-2'>Kannada</li>
-                        <li className='mb-2'>Tamil (a little, don't judge me)</li>
+                        <li className='mb-2'>Tamil (a little, don&apos;t judge me)</li>
                         <li className='mb-2'>Spanish (also a little, learning)</li>
                     </ul>
                 </div>

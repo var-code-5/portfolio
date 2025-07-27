@@ -34,6 +34,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   const startTimeRef = useRef<number | null>(null);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -84,6 +85,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   );
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");

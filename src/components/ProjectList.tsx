@@ -62,6 +62,7 @@ const ProjectList = () => {
                     duration: 1,
                     opacity: 1,
                 });
+                //@ts-ignore
             }) as any;
 
             window.addEventListener('mousemove', handleMouseMove);

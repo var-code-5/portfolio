@@ -161,6 +161,7 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
     xChannel,
     yChannel,
     mixBlendMode,
+    updateDisplacementMap,
   ]);
 
   useEffect(() => {
@@ -175,7 +176,7 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
     return () => {
       resizeObserver.disconnect();
     };
-  }, []);
+  }, [updateDisplacementMap]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -189,21 +190,29 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
     return () => {
       resizeObserver.disconnect();
     };
-  }, []);
+  }, [updateDisplacementMap]);
 
   useEffect(() => {
     setTimeout(updateDisplacementMap, 0);
-  }, [width, height]);
+  }, [width, height, updateDisplacementMap]);
 
   const supportsSVGFilters = () => {
+    if (typeof window === "undefined") return false;
+    
     const isWebkit =
-      /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
-    const isFirefox = /Firefox/.test(navigator.userAgent);
+      typeof navigator !== "undefined" && 
+      /Safari/.test(navigator.userAgent) && 
+      !/Chrome/.test(navigator.userAgent);
+    const isFirefox = 
+      typeof navigator !== "undefined" && 
+      /Firefox/.test(navigator.userAgent);
 
     if (isWebkit || isFirefox) {
       return false;
     }
 
+    if (typeof document === "undefined") return false;
+    
     const div = document.createElement("div");
     div.style.backdropFilter = `url(#${filterId})`;
     return div.style.backdropFilter !== "";
@@ -211,6 +220,7 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
 
   const supportsBackdropFilter = () => {
     if (typeof window === "undefined") return false;
+    if (typeof CSS === "undefined") return false;
     return CSS.supports("backdrop-filter", "blur(10px)");
   };
 

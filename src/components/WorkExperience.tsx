@@ -1,8 +1,6 @@
 import React from 'react'
 import ScrollStack, { ScrollStackItem } from './ui/ScrollStack'
-import Image from 'next/image'
 import { ExternalLink } from 'lucide-react';
-import { link } from 'fs';
 
 export default function WorkExperience() {
     const workExperience = [

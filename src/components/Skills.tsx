@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import Link from "next/link";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';

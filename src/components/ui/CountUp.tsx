@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -35,6 +35,10 @@ export default function CountUp({
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const animationRef = useRef<gsap.core.Tween | null>(null);
+  const [displayValue, setDisplayValue] = useState<string>("");
+  const isCountingRef = useRef(false);
+  const hasCountedRef = useRef(false);
+  const rafRef = useRef<number | null>(null);
 
   // Get number of decimal places in a number
   const getDecimalPlaces = (num: number): number => {
@@ -62,6 +66,58 @@ export default function CountUp({
     const formattedNumber = Intl.NumberFormat("en-US", options).format(value);
     return separator ? formattedNumber.replace(/,/g, separator) : formattedNumber;
   };
+
+  // Easing function for custom animation easing
+  const getEasedProgress = (progress: number, easeType: string) => {
+    switch (easeType) {
+      case "linear":
+        return progress;
+      case "power2.in":
+        return Math.pow(progress, 2);
+      case "power2.out":
+        return 1 - Math.pow(1 - progress, 2);
+      case "power2.inOut":
+        return progress < 0.5 ? Math.pow(progress * 2, 2) / 2 : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+      default:
+        return progress;
+    }
+  };
+
+  useEffect(() => {
+    if (isCountingRef.current) return;
+    isCountingRef.current = true;
+
+    const start = parseFloat(from.toString());
+    const end = parseFloat(to.toString());
+    const startTime = performance.now();
+    
+    const tick = () => {
+      const now = performance.now();
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      const easedProgress = getEasedProgress(progress, ease);
+      const value = start + (end - start) * easedProgress;
+      
+      setDisplayValue(formatNumber(value));
+      
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      } else {
+        isCountingRef.current = false;
+        onEnd?.();
+      }
+    };
+    
+    tick();
+    
+    return () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        isCountingRef.current = false;
+      }
+    };
+  }, [from, to, duration, ease, formatNumber, onEnd]);
 
   useEffect(() => {
     const element = ref.current;
@@ -127,7 +183,7 @@ export default function CountUp({
     };
   }, [to, from, direction, delay, duration, startWhen, separator, ease, onStart, onEnd, maxDecimals]);
 
-  return <span className={className} ref={ref} />;
+  return <span className={className} ref={ref}>{displayValue}</span>;
 }
 
 // Alternative version without ScrollTrigger for simpler use cases
@@ -146,6 +202,9 @@ export function SimpleCountUp({
   const ref = useRef<HTMLSpanElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const hasAnimatedRef = useRef(false);
+  const [displayValue, setDisplayValue] = useState<string>("");
+  const isCountingRef = useRef(false);
+  const rafRef = useRef<number | null>(null);
 
   const getDecimalPlaces = (num: number): number => {
     const str = num.toString();
@@ -172,59 +231,108 @@ export function SimpleCountUp({
     return separator ? formattedNumber.replace(/,/g, separator) : formattedNumber;
   };
 
+  // Easing function for custom animation easing
+  const getEasedProgress = (progress: number, easeType: string) => {
+    switch (easeType) {
+      case "linear":
+        return progress;
+      case "power2.in":
+        return Math.pow(progress, 2);
+      case "power2.out":
+        return 1 - Math.pow(1 - progress, 2);
+      case "power2.inOut":
+        return progress < 0.5 ? Math.pow(progress * 2, 2) / 2 : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+      default:
+        return progress;
+    }
+  };
+
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
+    if (isCountingRef.current) return;
+    isCountingRef.current = true;
 
-    // Set initial value
-    const initialValue = direction === "down" ? to : from;
-    element.textContent = formatNumber(initialValue);
-
-    // Create Intersection Observer
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimatedRef.current) {
-            hasAnimatedRef.current = true;
-            
-            const animationObject = { value: initialValue };
-            const targetValue = direction === "down" ? from : to;
-            
-            gsap.to(animationObject, {
-              value: targetValue,
-              duration,
-              delay,
-              ease,
-              onStart: () => {
-                if (typeof onStart === "function") {
-                  onStart();
-                }
-              },
-              onUpdate: () => {
-                if (element) {
-                  element.textContent = formatNumber(animationObject.value);
-                }
-              },
-              onComplete: () => {
-                if (typeof onEnd === "function") {
-                  onEnd();
-                }
-              },
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    observerRef.current.observe(element);
-
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
+    const start = parseFloat(from.toString());
+    const end = parseFloat(to.toString());
+    const startTime = performance.now();
+    
+    const tick = () => {
+      const now = performance.now();
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      const easedProgress = getEasedProgress(progress, ease);
+      const value = start + (end - start) * easedProgress;
+      
+      setDisplayValue(formatNumber(value));
+      
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      } else {
+        isCountingRef.current = false;
+        onEnd?.();
       }
     };
-  }, [to, from, direction, delay, duration, separator, ease, onStart, onEnd, maxDecimals]);
+    
+    tick();
+    
+    return () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        isCountingRef.current = false;
+      }
+    };
+  }, [from, to, duration, ease, formatNumber, onEnd]);
 
-  return <span className={className} ref={ref} />;
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!ref.current) return;
+    
+    const scrollAction = () => {
+      if (isCountingRef.current || hasAnimatedRef.current) return;
+      
+      const rect = ref.current!.getBoundingClientRect();
+      const isInView = rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0;
+      
+      if (isInView) {
+        isCountingRef.current = true;
+        hasAnimatedRef.current = true;
+        
+        const start = parseFloat(from.toString());
+        const end = parseFloat(to.toString());
+        const startTime = performance.now();
+        
+        const tick = () => {
+          const now = performance.now();
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          const easedProgress = getEasedProgress(progress, ease);
+          const value = start + (end - start) * easedProgress;
+          
+          setDisplayValue(formatNumber(value));
+          
+          if (progress < 1) {
+            rafRef.current = requestAnimationFrame(tick);
+          } else {
+            isCountingRef.current = false;
+            onEnd?.();
+          }
+        };
+        
+        tick();
+      }
+    };
+    
+    scrollAction();
+    window.addEventListener('scroll', scrollAction);
+    
+    return () => {
+      window.removeEventListener('scroll', scrollAction);
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, [from, to, duration, ease, formatNumber, onEnd]);
+
+  return <span className={className} ref={ref}>{displayValue}</span>;
 }

@@ -186,7 +186,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       wrapper: scroller,
       content: scroller.querySelector('.scroll-stack-inner') as HTMLElement,
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       touchMultiplier: 2,
       infinite: false,
@@ -210,6 +210,8 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
   }, [handleScroll]);
 
   useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
+    
     const scroller = scrollerRef.current;
     if (!scroller) return;
 
@@ -231,7 +233,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     });
 
     setupLenis();
-
     updateCardTransforms();
 
     return () => {
