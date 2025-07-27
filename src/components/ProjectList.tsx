@@ -104,7 +104,7 @@ const ProjectList = () => {
 
     return (
         <section className="pb-section w-full my-12 mx-auto max-w-screen-xl px-4 flex flex-col " id="selected-projects">
-            <div className="container w-full flex flex-col flex-1 justify-center">
+            <div className="container w-full flex flex-col flex-1 justify-center" id="projects">
                 {/* todo change this  */}
                 <SectionTitle title="SELECTED PROJECTS" />
 

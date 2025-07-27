@@ -119,67 +119,116 @@ export const PROJECTS: IProject[] = [
         - Ensured smooth user experience with lower latency for 5k+ concurrent users.<br/>`,
     },
     {
-        title: 'Real Estate',
-        slug: 'property-pro',
+        title: 'AO3 Chrome Extension',
+        slug: 'ao3-chrome-extension',
         techStack: [
             'React.js',
-            'Redux',
             'Tailwind CSS',
-            'React i18n',
-            'Framer Motion',
+            'Express.js',
+            'PostgreSQL',
         ],
-        thumbnail: '/projects/thumbnail/property-pro.jpg',
-        longThumbnail: '/projects/long/property-pro.jpg',
+        thumbnail: '/projects/AO3/1.png',
+        longThumbnail: '/projects/AO3/1.png',
         images: [
-            '/projects/images/property-pro-1.png',
-            '/projects/images/property-pro-2.png',
-            '/projects/images/property-pro-3.png',
+            '/projects/AO3/1.png',
+            '/projects/AO3/2.png',
+            '/projects/AO3/3.png',
+            '/projects/AO3/4.png',
+            '/projects/AO3/5.png',
         ],
-        liveUrl: 'https://demo.propertypro.siphertech.com/',
-        year: 2023,
+        sourceCode: 'https://github.com/GDGVIT/ao3-chrome-extension',
+        year: 2024,
         description:
-            'PropertyPro is a real estate management platform offering users a seamless experience to explore, manage, and view property listings. The application emphasizes accessibility and responsive design, ensuring a smooth interface across devices.',
-        role: `As the frontend developer, I:<br/>
-        - Built the frontend using React, Redux, RTK Query, Framer Motion, and Tailwind CSS.<br/>
-        - Integrated dynamic state management for efficient handling of property data.<br/>
-        - Implemented multi-language support with React i18n to cater to diverse audiences.<br/>
-        - Enhanced user interaction with animations and transitions using Framer Motion.`,
+            'AO3 Chrome Extension is a browser extension designed to enhance the user experience on Archive of Our Own (AO3). The extension provides features like recommendations, bookmarking, and improved navigation for AO3 users.',
+        role: `As the Backend developer, I:<br/>
+        - Built the backend using Express.js and PostgreSQL.<br/>
+        - Custom API for fetching and parsing the A03 website`,
     },
     {
-        title: 'Consulting Finance',
-        slug: 'crenotive',
-        techStack: ['HTML', 'CSS & SCSS', 'Javascript', 'Bootstrap'],
-        thumbnail: '/projects/thumbnail/consulting-finance.jpg',
-        longThumbnail: '/projects/long/consulting-finance.jpg',
-        images: [
-            '/projects/images/consulting-finance-1.png',
-            '/projects/images/consulting-finance-2.png',
-            '/projects/images/consulting-finance-3.png',
+        title: 'DevBoard',
+        slug: 'devboard',
+        techStack: [
+            'Next.js',
+            'Tailwind CSS',
+            'Gorilla Mux',
+            'MongoDB',
+            'Redis'
         ],
-        sourceCode: 'https://github.com/Tajmirul/crenotive',
-        liveUrl: 'https://crenotive.netlify.app/',
-        year: 2023,
+        thumbnail: '/projects/devboard/1.png',
+        longThumbnail: '/projects/devboard/1.png',
+        images: [
+            '/projects/devboard/1.png',
+            '/projects/devboard/2.png',
+            '/projects/devboard/3.png',
+        ],
+        liveUrl: 'https://devboard-frontend-ten.vercel.app/',
+        year: 2025,
         description:
-            'I developed Crenotive, a portfolio website using Html, SASS, and jQuery to showcase services and expertise. The design focuses on responsive user experience and effective presentation of professional achievements.',
-        role: ``,
+            'I developed DevBoard, a collaborative platform for developers make custom github widgets. The platform allows users to create, share, and customize widgets that display GitHub statistics and information in a visually appealing way.',
+        role: `Backend Developer<br/>
+        - Currently under Development<br/>`,
     },
     {
-        title: 'devLinks',
-        slug: 'devLinks',
-        techStack: ['Next.js', 'Formik', 'Drag & Drop', 'Tailwind CSS'],
-        thumbnail: '/projects/thumbnail/devLinks.jpg',
-        longThumbnail: '/projects/long/devLinks.jpg',
-        images: [
-            '/projects/images/devLinks-1.png',
-            '/projects/images/devLinks-2.png',
-            '/projects/images/devLinks-3.png',
-        ],
-        sourceCode: 'https://github.com/Tajmirul/devsLink',
-        liveUrl: 'https://devlinks-demo.vercel.app/auth/signin',
-        year: 2023,
-        description: `One of the most challenging projects in Frontend Mentor.<br/><br/>
-
-            I developed a LinkSharing App as part of the Frontend Mentor challenge, utilizing React, Redux, and Tailwind CSS to create a responsive and feature-rich platform. The app allows users to share, save, and explore links, with a focus on intuitive design and smooth navigation. Advanced state management ensures efficient data handling for user interactions.`,
-        role: ``,
-    },
+    title: 'Travelio MCP',
+    slug: 'travelio-mcp',
+    sourceCode: 'https://github.com/var-code-5/travelio-mcp',
+    year: 2025,
+    description: `
+      Travelio is an advanced AI-powered travel planning application that revolutionizes how users create personalized travel itineraries. Built with a robust MCP (Model-Control-Presentation) architecture, the system integrates multiple AI providers to deliver intelligent travel recommendations and seamless planning experiences.<br/><br/>
+      
+      Key Features:<br/>
+      <ul>
+        <li>🤖 AI-Powered Itinerary Generation: Custom travel plans using Google Gemini, OpenAI, and Groq APIs</li>
+        <li>💬 Interactive Chatbot Interface: Conversational travel planning through CLI and API endpoints</li>
+        <li>🗄️ PostgreSQL Database: Robust data storage for travel information, user preferences, and itineraries</li>
+        <li>🏗️ MCP Architecture: Scalable Model-Control-Presentation design for maintainable code</li>
+        <li>🔄 Database Migrations: Alembic-powered schema management with version control</li>
+        <li>📊 Multi-AI Integration: Supports multiple AI providers for enhanced recommendation accuracy</li>
+        <li>⚡ Fast Package Management: UV-powered dependency management for optimal performance</li>
+      </ul><br/>
+      
+      Technical Highlights:
+      <ul>
+        <li>Implemented sophisticated MCP server architecture for scalable travel data processing</li>
+        <li>Designed modular API structure with clean separation of concerns</li>
+        <li>Integrated multiple AI providers (Gemini, OpenAI, Groq) with fallback mechanisms</li>
+        <li>Built comprehensive database schema with efficient migration system</li>
+        <li>Developed interactive chatbot interface for natural language travel planning</li>
+        <li>Created automated database seeding and testing infrastructure</li>
+      </ul>
+      `,
+    role: `
+      Backend Developer & System Architect<br/>
+      Led the complete backend development and system design:
+      <ul>
+        <li>🏛️ Architecture Design: Implemented scalable MCP architecture with clean separation of layers</li>
+        <li>🤖 AI Integration: Configured multiple AI providers (Google Gemini, OpenAI, Groq) with intelligent routing</li>
+        <li>🗃️ Database Engineering: Designed PostgreSQL schema with Alembic migrations for travel data management</li>
+        <li>🔌 API Development: Built comprehensive REST API endpoints for travel planning functionality</li>
+        <li>💬 Chatbot Implementation: Developed conversational interface for natural language travel queries</li>
+        <li>🧪 Testing Framework: Implemented pytest-based testing suite for reliable code quality</li>
+        <li>📦 DevOps Setup: Configured UV package management and automated deployment processes</li>
+        <li>📚 Documentation: Created comprehensive setup guides and API documentation</li>
+      </ul>
+      `,
+    techStack: [
+        'Python 3.13+',
+        'PostgreSQL',
+        'Google Gemini API',
+        'OpenAI API',
+        'Groq API',
+        'Alembic',
+        'pytest',
+        'UV Package Manager',
+        'MCP Architecture',
+        'REST API',
+        'CLI Interface',
+        'Database Migrations',
+    ],
+    thumbnail: '/projects/travelio/1.png',
+    longThumbnail: '/projects/travelio/1.png',
+    images: [
+        '/projects/travelio/1.png',
+    ],
+}
 ];

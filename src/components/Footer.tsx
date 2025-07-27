@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Footer() {
     return (
-        <div className='w-full min-h-[50vh] bg-cpurple flex flex-col justify-between items-center text-white font-rethink-sans px-4 sm:px-8 md:px-20'>
+        <div className='w-full min-h-[50vh] bg-cpurple flex flex-col justify-between items-center text-white font-rethink-sans px-4 sm:px-8 md:px-20' id='contact'>
             <div className='flex flex-col-reverse md:flex-row w-full py-8 md:py-12'>
                 <div className='w-full md:w-1/2 flex flex-col justify-evenly items-start gap-8 mt-8 md:mt-0'>
                     <div>
@@ -12,7 +12,7 @@ export default function Footer() {
                         <ul className='flex flex-wrap font-space-grotesk text-xl sm:text-2xl space-x-4 items-center'>
                             <li><Link href="/" className='text-white hover:text-cgreen hover:bg-black hover:border-2 hover:border-dashed underline'>Home</Link></li>
                             <li><div className='w-6 h-[2px] bg-white'></div></li>
-                            <li><Link href="/projects" className='text-white hover:text-cgreen hover:bg-black hover:border-2 hover:border-dashed underline'>Projects</Link></li>
+                            <li><Link href="/#projects" className='text-white hover:text-cgreen hover:bg-black hover:border-2 hover:border-dashed underline'>Projects</Link></li>
                         </ul>
                     </div>
                     <div>
