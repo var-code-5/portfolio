@@ -86,7 +86,7 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
     return (
         <TransitionLink
             href={`/projects/${project.slug}`}
-            className="project-item group leading-none py-5 md:border-b first:!pt-0 last:pb-0 last:border-none md:group-hover/projects:opacity-30 md:hover:!opacity-100 transition-all"
+            className="project-item group leading-none py-3 sm:py-4 md:py-5 md:border-b first:!pt-0 last:pb-0 last:border-none md:group-hover/projects:opacity-30 md:hover:!opacity-100 transition-all"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
@@ -97,32 +97,33 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
                     width="300"
                     height="200"
                     className={cn(
-                        'w-full object-cover mb-6 aspect-[3/2] object-top',
+                        'w-full object-cover mb-3 sm:mb-4 md:mb-6 aspect-[3/2] object-top'
                     )}
                     key={project.slug}
                     loading="lazy"
                 />
             )}
-            <div className="flex gap-2 md:gap-5">
-                <div className="font-rethink-sans text-black-text">
+            <div className="flex gap-2 sm:gap-3 md:gap-5">
+                <div className="font-rethink-sans text-black-text text-sm sm:text-base md:text-base">
                     _{(index + 1).toString().padStart(2, '0')}.
                 </div>
-                <div className="">
-                    <h4 className="text-4xl xs:text-6xl flex gap-4 font-rethink-sans font-semibold transition-all duration-700 bg-gradient-to-r from-cgreen to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
+                <div className="flex-1">
+                    <h4 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl flex items-center gap-2 sm:gap-3 md:gap-4 font-rethink-sans font-semibold transition-all duration-700 bg-gradient-to-r from-cgreen to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
                         {project.title}
 
                         {/* arrow svg  */}
                         <span className="text-foreground opacity-0 group-hover:opacity-100 transition-all">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                width="36"
-                                height="36"
+                                width="24"
+                                height="24"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
                                 strokeWidth="2"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
+                                className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-9 lg:h-9"
                                 ref={externalLinkSVGRef}
                             >
                                 <path
@@ -135,17 +136,17 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
                         </span>
                     </h4>
                     
-                    <div className="mt-2 flex flex-wrap gap-3 text-black-text opacity-50 text-xs">
+                    <div className="mt-1 sm:mt-2 flex flex-wrap gap-2 sm:gap-3 text-black-text opacity-50 text-[10px] xs:text-xs">
                         {project.techStack
                             .slice(0, 3)
                             .map((tech, idx, stackArr) => (
                                 <div
-                                    className="gap-3 flex items-center"
+                                    className="gap-2 sm:gap-3 flex items-center"
                                     key={tech}
                                 >
                                     <span className="">{tech}</span>
                                     {idx !== stackArr.length - 1 && (
-                                        <span className="inline-block size-2 rounded-full bg-background-light"></span>
+                                        <span className="inline-block size-1 sm:size-1.5 md:size-2 rounded-full bg-background-light"></span>
                                     )}
                                 </div>
                             ))}

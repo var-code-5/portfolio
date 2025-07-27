@@ -4,6 +4,7 @@ import "./globals.css";
 import ClickSpark from "@/components/ui/ClickSpark";
 import Navbar from "@/components/Navbar";
 import { ReactLenis } from 'lenis/react';
+import Footer from "@/components/Footer";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -46,6 +47,7 @@ export default function RootLayout({
           >
             <Navbar />
             {children}
+            <Footer />
           </ClickSpark>
         </ReactLenis>
       </body>

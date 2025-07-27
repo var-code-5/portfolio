@@ -5,7 +5,7 @@ import ProjectList from "@/components/ProjectList";
 import Skills from "@/components/Skills";
 import DarkVeil from "@/components/ui/DarkVeil";
 import ScrollDownInd from "@/components/ui/ScrollDownInd";
-import Link from "next/link";
+import WorkExperience from "@/components/WorkExperience";
 
 export default function Home() {
 
@@ -23,8 +23,8 @@ export default function Home() {
           <span className="inline-block translate-y-full">A</span>
           <span className="inline-block translate-y-full">R</span>
           <p className="absolute -right-[43%] -bottom-[89%] text-black-text font-space-grotesk text-[6vw] lg:text-6xl font-bold">IABLE</p>
+          <p className="absolute top-1/2 left-1/2 -translate-x-[50%] translate-y-[400%] font-rethink-sans text-4xl">You are looking for !!</p>
         </div>
-        <p className="absolute top-1/2 left-1/2 -translate-x-[50%] translate-y-[400%] font-rethink-sans text-4xl">You are looking for !!</p>
 
         {/* email */}
         <Email />
@@ -40,9 +40,11 @@ export default function Home() {
         <ScrollDownInd className="absolute bottom-20 left-1/2 transform -translate-x-1/2" />
       </div>
 
+      <WorkExperience />
       <Impact />
       <Skills />
       <ProjectList />
+
     </>
   );
 }
