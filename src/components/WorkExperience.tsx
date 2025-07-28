@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import ScrollStack, { ScrollStackItem } from './ui/ScrollStack'
 import { ExternalLink } from 'lucide-react';
@@ -32,10 +33,20 @@ export default function WorkExperience() {
             logo: "/work/agasthya.png",
         }
     ];
+
+    const handleStackComplete = () => {
+        setTimeout(() => {
+            window.scrollTo({
+                top: window.scrollY + (window.innerHeight * 0.5), // Scroll only 50% of viewport height
+                behavior: 'smooth',
+            });
+        }, 100); 
+    };
+
     return (
         <div className='w-full h-[100vh] sm:h-[70vh] mx-auto max-w-screen-xl relative'>
             <h1 className="absolute font-rethink-sans text-[4rem] sm:text-[6rem] md:text-[7rem] lg:text-[10rem] font-bold opacity-5 gsap-reveal w-full text-center">Work Experience</h1>
-            <ScrollStack className="w-full h-full">
+            <ScrollStack className="w-full h-full" onStackComplete={handleStackComplete}>
                 {workExperience.map((item, index) => (
                     <ScrollStackItem key={index} itemClassName={`flex flex-col md:flex-row items-center justify-center gap-4 ${index % 2 === 0 ? 'bg-cgreen text-black' : 'bg-cpurple text-white'}`}>
                         <div className="flex flex-col items-center gap-4 w-full md:w-1/2 font-rethink-sans ">
