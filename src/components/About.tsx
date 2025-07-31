@@ -69,7 +69,7 @@ export default function About() {
         <div ref={containerRef} className='min-h-screen w-full mx-auto max-w-screen-xl px-4 py-16' id='about'>
             <h1 className='about-title text-4xl font-bold mb-8 font-space-grotesk border-b-2 text-cpurple border-cgreen capitalize'>Let&apos;s talk about Me..</h1>
             <p className='about-intro text-lg mb-8 font-rethink-sans'>
-                Hey there! mi llamo Varshit, I am a 20-year-old software engineer from India (that sound generic right). I love reading, eating, sleeping and coding. lets get to know me
+                Hey there! mi llamo Varshith, I am a 20-year-old software engineer from India (that sound generic right). I love reading, eating, sleeping and coding. lets get to know me
             </p>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-rethink-sans'>
