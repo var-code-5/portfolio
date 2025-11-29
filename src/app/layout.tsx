@@ -17,6 +17,8 @@ const rethinkSans = Rethink_Sans({
   subsets: ["latin"],
 });
 
+
+
 export const metadata: Metadata = {
   title: "Varshith | Portfolio",
   description: "The Variable you are looking for - Software Developer specializing in web development and creative solutions",
@@ -77,6 +79,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="xJnOOg8goILGQy6J0qcK0MHPYz5SfJ6ze_Dm1FMduH4" />
+      </head>
       <body
         className={`${spaceGrotesk.variable} ${rethinkSans.variable} antialiased flex flex-col items-center w-screen min-h-screen font-rethink-sans text-black-text`}
       >
